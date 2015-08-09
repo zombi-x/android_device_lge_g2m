@@ -87,7 +87,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/g2mds/rootdir/fstab.g2mds:root/fstab.g2mds \
     device/lge/g2mds/rootdir/init.g2mds.rc:root/init.g2mds.rc \
-    device/lge/g2mds/rootdir/init.g2mds.rc:root/init.g2mds.rc \
     device/lge/g2mds/rootdir/init.g2mds.usb.rc:root/init.g2mds.usb.rc \
     device/lge/g2mds/rootdir/ueventd.g2mds.rc:root/ueventd.g2mds.rc
 
