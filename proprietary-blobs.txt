@@ -287,10 +287,11 @@ vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
 bin/sensors.qcom
 lib/hw/lights.msm8226.so
-vendor/lib/libbmc050.so
 vendor/lib/libsensor_test.so
 vendor/lib/libsensor_thresh.so
 vendor/lib/libsensor_user_cal.so
+# just in case
+vendor/lib/libsensor_lge_cal.so
 
 # Perf
 bin/mpdecision
@@ -313,14 +314,14 @@ vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-dplmedia.so
 
 # IRDA
-bin/irrcServer
-lib/libirrc.so
-lib/libirrcClient.so
-lib/libirrcJni.so
-lib/liblgewg.so
--app/LGQRemote.apk
--app/QuicksetSDK.apk
--media/audio/ui/IR_normal.ogg
+#bin/irrcServer
+#lib/libirrc.so
+#lib/libirrcClient.so
+#lib/libirrcJni.so
+#lib/liblgewg.so
+#app/LGQRemote.apk
+#app/QuicksetSDK.apk
+#media/audio/ui/IR_normal.ogg
 
 # We need it?
 
