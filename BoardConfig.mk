@@ -53,8 +53,8 @@ TARGET_BOOTLOADER_BOARD_NAME := g2mds
 # Kernel image
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2mds/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/lge/msm8226
-TARGET_KERNEL_CONFIG := g2mdsds_cyanogenmod_defconfig
+TARGET_KERNEL_SOURCE := kernel/lge/qualcomm/msm8226
+TARGET_KERNEL_CONFIG := d618_cm_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=g2mds androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
