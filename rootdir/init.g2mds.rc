@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
  
-import init.w7.usb.rc
+import init.g2mds.usb.rc
 on init
     mkdir /storage 0751 system sdcard_r
     mkdir /storage/sdcard1 0700 root root
@@ -190,10 +190,10 @@ on fs
     mkdir /dev/bus/usb 0755 root root
 
     # mount fs
-    mount_all fstab.w7
+    mount_all fstab.g2mds
 
     # activate zram
-    swapon_all fstab.w7
+    swapon_all fstab.g2mds
     write /proc/sys/vm/page-cluster 0
 
     # Keeping following partitions outside fstab file. As user may not have
@@ -443,11 +443,20 @@ on property:persist.radio.multisim.config=dsds
     stop ril-daemon
     start mmi-ril-daemon
     start ril-daemon2
+    start ril-daemon3
 
 service ril-daemon2 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
+    user root
+    disabled
+    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log net_raw
+
+service ril-daemon3 /system/bin/rild -c 3
+    class main
+    socket rild3 stream 660 root radio
+    socket rild-debug3 stream 660 radio system
     user root
     disabled
     group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log net_raw
@@ -500,7 +509,7 @@ service thermal-engine /system/bin/thermal-engine
    user root
    group root
 
-service charger /sbin/charger_w7
+service charger /sbin/charger_g2mds
     class charger
     critical
 

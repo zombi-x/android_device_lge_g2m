@@ -24,16 +24,16 @@
 USE_CAMERA_STUB := false
 TARGET_NO_BOOTLOADER := true
 
-TARGET_SPECIFIC_HEADER_PATH += device/lge/w7/include
+TARGET_SPECIFIC_HEADER_PATH += device/lge/g2mds/include
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/w7
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2mds
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/lge/w7/init/init_w7.c
-TARGET_OTA_ASSERT_DEVICE := w7,w7ds,w7n
+TARGET_LIBINIT_DEFINES_FILE := device/lge/g2mds/init/init_g2mds.c
+TARGET_OTA_ASSERT_DEVICE := g2m,g2mds,g2mss,D618,D620,D610
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -48,14 +48,14 @@ TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
 TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
-TARGET_BOOTLOADER_BOARD_NAME := w7
+TARGET_BOOTLOADER_BOARD_NAME := g2mds
 
 # Kernel image
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/w7/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2mds/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/lge/msm8226
-TARGET_KERNEL_CONFIG := w7ds_cyanogenmod_defconfig
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=w7 androidboot.selinux=enforcing
+TARGET_KERNEL_CONFIG := g2mdsds_cyanogenmod_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=g2mds androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -78,17 +78,17 @@ BOARD_USES_ALSA_AUDIO := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Display
-BOARD_EGL_CFG := device/lge/w7/prebuilt/egl.cfg
+BOARD_EGL_CFG := device/lge/g2mds/prebuilt/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Hardware tunables framework
-BOARD_HARDWARE_CLASS := device/lge/w7/cmhw/
+BOARD_HARDWARE_CLASS := device/lge/g2mds/cmhw/
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/w7/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g2mds/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -127,7 +127,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # TWRP Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/lge/w7/rootdir/fstab.w7
+TARGET_RECOVERY_FSTAB := device/lge/g2mds/rootdir/fstab.g2mds
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 DEVICE_RESOLUTION := 540x960
@@ -168,5 +168,5 @@ TARGET_POWERHAL_VARIANT := qcom
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-        device/lge/w7/sepolicy
+        device/lge/g2mds/sepolicy
 

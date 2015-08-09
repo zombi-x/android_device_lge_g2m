@@ -12,6 +12,7 @@ vendor/firmware/keymaster/keymaster.b03
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 vendor/firmware/a225p5_pm4.fw
+
 # Venus (media) firmware
 vendor/firmware/venus.b01
 vendor/firmware/venus.b03
@@ -20,6 +21,7 @@ vendor/firmware/venus.b00
 vendor/firmware/venus.b02
 vendor/firmware/venus.b04
 vendor/firmware/venus.mdt
+
 # Graphics firmware
 vendor/firmware/a225_pm4.fw
 vendor/firmware/a300_pm4.fw
@@ -27,6 +29,7 @@ vendor/firmware/a330_pm4.fw
 vendor/firmware/a225_pfp.fw
 vendor/firmware/a300_pfp.fw
 vendor/firmware/a330_pfp.fw
+
 # Camera firmware
 vendor/firmware/cpp_firmware_v1_1_6.fw
 vendor/firmware/cpp_firmware_v1_1_1.fw
