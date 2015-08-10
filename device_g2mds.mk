@@ -66,7 +66,7 @@ PRODUCT_COPY_FILES += \
     device/lge/g2mds/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/lge/g2mds/prebuilt/etc/thermal-engine-8226.conf:system/etc/thermal-engine-8226.conf \
     device/lge/g2mds/prebuilt/usr/idc/touch_dev.idc:system/usr/idc/touch_dev.idc \
-    device/lge/g2mds/prebuilt/usr/keylayout/Generic-D618.kl:system/usr/keylayout/Generic-D618.kl \
+    device/lge/g2mds/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
     device/lge/g2mds/prebuilt/etc/init.zetaw.bt.sh:system/etc/init.zetaw.bt.sh \
     device/lge/g2mds/prebuilt/etc/msap.conf:system/etc/msap.conf \
     device/lge/g2mds/prebuilt/etc/clatd.conf:system/etc/clatd.conf \
