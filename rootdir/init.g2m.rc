@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
  
-import init.g2mds.usb.rc
+import init.g2m.usb.rc
 on init
     mkdir /storage 0751 system sdcard_r
     mkdir /storage/sdcard1 0700 root root
@@ -190,10 +190,10 @@ on fs
     mkdir /dev/bus/usb 0755 root root
 
     # mount fs
-    mount_all fstab.g2mds
+    mount_all fstab.g2m
 
     # activate zram
-    swapon_all fstab.g2mds
+    swapon_all fstab.g2m
     write /proc/sys/vm/page-cluster 0
 
     # Keeping following partitions outside fstab file. As user may not have
@@ -357,8 +357,7 @@ on property:ro.data.large_tcp_window_size=true
 
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
-    -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -N \
+    -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf \
     -puse_p2p_group_interface=1 -e/data/misc/wifi/entropy.bin \
@@ -375,7 +374,6 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT

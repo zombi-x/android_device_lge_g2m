@@ -25,16 +25,16 @@ USE_CAMERA_STUB := false
 TARGET_NO_BOOTLOADER := true
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
-TARGET_SPECIFIC_HEADER_PATH += device/lge/g2mds/include
+TARGET_SPECIFIC_HEADER_PATH += device/lge/g2m/include
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2mds
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2m
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/lge/g2mds/init/init_g2mds.c
-TARGET_OTA_ASSERT_DEVICE := g2m,g2mds,g2mss,D618,D620,D610
+TARGET_LIBINIT_DEFINES_FILE := device/lge/g2m/init/init_g2m.c
+TARGET_OTA_ASSERT_DEVICE := g2m,g2mds,g2mss
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -46,17 +46,16 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_MEMCPY_BASE_OPT_DISABLE := true
-TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
-TARGET_BOOTLOADER_BOARD_NAME := g2mds
+TARGET_BOOTLOADER_BOARD_NAME := g2m
 
 # Kernel image
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2mds/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2m/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/lge/msm8226
-TARGET_KERNEL_CONFIG := d618_cm_defconfig
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=g2mds androidboot.selinux=permissive
+TARGET_KERNEL_CONFIG := g2mini_cm_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 user_debug=31 msm_rtb.filter=0x37 androidboot.hardware=g2m androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
@@ -73,6 +72,9 @@ COMMON_GLOBAL_CFLAGS +=  -DLG_CAMERA_HARDWARE
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Audio
 AUDIO_FEATURE_ENABLED_FM := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -80,17 +82,19 @@ BOARD_USES_ALSA_AUDIO := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Display
-BOARD_EGL_CFG := device/lge/g2mds/prebuilt/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Hardware tunables framework
-BOARD_HARDWARE_CLASS := device/lge/g2mds/cmhw/
+BOARD_HARDWARE_CLASS := device/lge/g2m/cmhw/
+
+# RIL
+BOARD_RIL_CLASS := ../../../device/lge/g2m/ril/
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g2mds/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g2m/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -108,12 +112,6 @@ TARGET_USES_QCOM_WCNSS_QMI := true
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
-# Recovery
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -126,10 +124,12 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00E00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00E00000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 754974720
 BOARD_FLASH_BLOCK_SIZE := 131072
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := device/lge/g2mds/rootdir/fstab.g2mds
+TARGET_RECOVERY_FSTAB := device/lge/g2m/rootdir/fstab.g2m
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 DEVICE_RESOLUTION := 540x960
@@ -170,5 +170,5 @@ TARGET_POWERHAL_VARIANT := qcom
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-        device/lge/g2mds/sepolicy
+        device/lge/g2m/sepolicy
 
