@@ -19,7 +19,6 @@ persist.qcril.disable_retry=true
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 persist.radio.msgtunnel.start=false
-telephony.lteOnCdmaDevice=0
 ro.telephony.default_network=0
 ro.ril.enable.amr.wideband=1
 ro.lge.proximity.delay=25
