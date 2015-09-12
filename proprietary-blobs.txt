@@ -2,6 +2,8 @@
 bin/time_daemon
 
 # WebView
+lib/libwebviewchromium_loader.so
+lib/libwebviewchromium_plat_support.so
 lib/libwebviewchromium.so
 
 # Keystore
