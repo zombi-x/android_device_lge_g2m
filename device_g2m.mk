@@ -94,6 +94,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/g2m/prebuilt/fixup.sh:fixup.sh
 
+# Delete 4G option for non-LTE models by script below
+PRODUCT_COPY_FILES += \
+    device/lge/g2m/prebuilt/nonLTE/TeleService/TeleService.apk:system/nonLTE/TeleService/TeleService.apk
+
 # TWRP
 PRODUCT_COPY_FILES += \
     device/lge/g2m/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
