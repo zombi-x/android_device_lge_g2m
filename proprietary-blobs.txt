@@ -263,7 +263,6 @@ vendor/lib/liblbs_core.so
 vendor/lib/liblocationservice.so
 vendor/lib/liblowi_client.so
 vendor/lib/libquipc_os_api.so
-vendor/lib/libquipc_os_api.so
 vendor/lib/libquipc_ulp_adapter.so
 vendor/lib/libulp2.so
 vendor/lib/libalarmservice_jni.so
