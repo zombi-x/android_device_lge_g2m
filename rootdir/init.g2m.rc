@@ -497,10 +497,9 @@ service thermal-engine /system/bin/thermal-engine
    user root
    group root
 
-service charger /sbin/healthd -c
+service charger /sbin/charger_g2mds
     class charger
     critical
-    seclabel u:r:healthd:s0
 
 service adsprpcd /system/bin/adsprpcd
    class main
