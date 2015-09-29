@@ -459,6 +459,11 @@ static void android_green(void)
     gr_color(0xa4, 0xc6, 0x39, 255);
 }
 
+static void android_white(void)
+{
+    gr_color(0xff, 0xff, 0xff, 255);
+}
+
 /* returns the last y-offset of where the surface ends */
 static int draw_surface_centered(struct charger* /*charger*/, gr_surface surface)
 {
@@ -483,7 +488,7 @@ static void draw_unknown(struct charger *charger)
     if (charger->surf_unknown) {
         draw_surface_centered(charger, charger->surf_unknown);
     } else {
-        android_green();
+        android_white();
         y = draw_text("Charging!", -1, -1);
         draw_text("?\?/100", -1, y + 25);
     }
@@ -514,7 +519,7 @@ static void draw_capacity(struct charger *charger)
     str_len_px = gr_measure(cap_str);
     x = (gr_fb_width() - str_len_px) / 2;
     y = (gr_fb_height() + char_height) / 2;
-    android_green();
+    android_white();
     gr_text(x, y, cap_str, 0);
 }
 #endif
