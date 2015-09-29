@@ -65,6 +65,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Offmode Charging
 BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+BOARD_HEALTHD_CUSTOM_CHARGER := device/lge/g2m/healthd/healthd_mode_charger.cpp
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/lge/g2m/healthd/images
+
 COMMON_GLOBAL_CFLAGS += \
     -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
     -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
