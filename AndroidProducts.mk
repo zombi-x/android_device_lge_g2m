@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_g2m.mk
+    $(LOCAL_DIR)/zombi_g2m.mk
